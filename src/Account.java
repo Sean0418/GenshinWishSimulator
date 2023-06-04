@@ -184,8 +184,9 @@ public class Account{
             }
 
             //hard pity
-            if(pityCounter==FIVE_STAR_PITY && (hardPity==true)){
+            if(pityCounter>=FIVE_STAR_PITY && (hardPity==true)){
                 this.eFive++;
+                this.fourPity++;
                 this.pityCounter = 0;
                 hardPity=false; 
                 System.out.println("Congratulations! You have obtained a 5 star event character/item. \n");
@@ -206,7 +207,7 @@ public class Account{
                 continue;
             }
 
-            if(fourPity==FOUR_STAR_PITY){
+            if(fourPity>=FOUR_STAR_PITY){
                 this.four++; 
                 fourPity=0;
                 System.out.println("You have obtained a 4 star character/item. \n");
@@ -237,6 +238,7 @@ public class Account{
         Random dice = new Random();
         int roll = 0;
         roll = dice.nextInt(2); //0 for getting standard character, 1 for getting event character
+        this.fourPity++;
         System.out.println("Congratulations! You have obtained a 5-star " + ((roll==1)?"event":"standard") + " character! \n" );
         if (roll==1){
             this.eFive++;
@@ -301,8 +303,9 @@ public class Account{
 
 
             //pity
-            if(spityCounter==FIVE_STAR_PITY){
+            if(spityCounter>=FIVE_STAR_PITY){
                 this.sFive++;
+                this.sfourPity++;
                 this.spityCounter = 0;
                 System.out.println("Congratulations! You have obtained a 5 star standard character/item. \n");
                 continue;
@@ -313,13 +316,14 @@ public class Account{
             if (roll<=(probabilityFactor(spityCounter))){
                 
                     this.sFive++;
+                    this.sfourPity++;
                     System.out.println("Congratulations! You have obtained a 5-star standard character/item. \n");
                     this.spityCounter =0;
                     
                 continue;
             }
 
-            if(sfourPity==FOUR_STAR_PITY){
+            if(sfourPity>=FOUR_STAR_PITY){
                 this.four++; 
                 sfourPity=0;
                 System.out.println("You have obtained a 4 star character/item. \n");
