@@ -313,6 +313,7 @@ public class Account{
 
             roll = dice.nextInt(1000); 
             //probability on rolls, non-endpoint probability
+            //If a 4star is not pulled, 4star pity increases, if a 5star is not pulled, 5star pity increases
             if (roll<=(probabilityFactor(spityCounter))){
                 
                     this.sFive++;
