@@ -28,6 +28,8 @@ public class Account{
     int sfourPity =0;
     
 
+    
+
     //constructor 
     public Account(int fates, int primos, int acFate){
         this.primo = primos;
